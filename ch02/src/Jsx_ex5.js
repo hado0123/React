@@ -12,6 +12,16 @@ function App() {
    }
 
    return <div style={style}>{name}</div>
+   
+   /* 
+   혹은 
+   return <div style={{
+      backgroundColor: 'red',
+      color: 'black',
+      fontSize: '48px',
+      padding: 16, //단위는 생략시 px로 지정됨
+   }}>{name}</div>
+   */
 }
 
 export default App
