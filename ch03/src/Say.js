@@ -19,29 +19,19 @@ const Say = () => {
          <button onClick={onClickLeave}>퇴장</button>
          <h1 style={{ color }}>{message}</h1>
          <button
-            style={{ color: 'red' }}
             onClick={() => {
                setColor('red')
-            }}
-         >
-            빨간
-         </button>
+            }}>빨간</button>
+         
          <button
-            style={{ color: 'green' }}
             onClick={() => {
                setColor('green')
-            }}
-         >
-            초록
-         </button>
+            }}>초록</button>
+         
          <button
-            style={{ color: 'blue' }}
             onClick={() => {
                setColor('blue')
-            }}
-         >
-            파란
-         </button>
+            }}>파란</button>
       </div>
    )
 }
