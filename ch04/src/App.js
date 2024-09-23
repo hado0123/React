@@ -3,7 +3,7 @@ import EventPractice from './EventPractice'
 
 function App() {
    return <EventPractice />
-   //  return <EventPractice2 />
+   // return <EventPractice2 />
 }
 
 export default App
