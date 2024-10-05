@@ -11,7 +11,7 @@ const EventPractice = () => {
    const onChangeMessage = (e) => setMessage(e.target.value)
 
    const onClick = (e) => {
-      alert('첫번째 입력값:' + username + ', 두번째 입력값:' + message)
+      alert(`첫번째 입력값: ${username}, 두번째 입력값: ${message}`)
       setUsername('')
       setMessage('')
    }
@@ -30,7 +30,10 @@ const EventPractice = () => {
 
          <input type="text" name="message" placeholder="아무거나 입력" value={message} onChange={onChangeMessage} onKeyDown={onKeyDown} />
 
-         <button onClick={onClick}>확인</button>
+         {/* 속성에 사용하는 and, or 연산자는 조건부 연산자 X */}
+         <button onClick={onClick} disabled={!username || !message}>
+            확인
+         </button>
       </div>
    )
 }

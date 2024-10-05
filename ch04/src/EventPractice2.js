@@ -20,7 +20,7 @@ const EventPractice2 = () => {
 
    const onClick = () => {
       //클릭시 username, message값 출력후 username, message값 비워줌
-      alert('첫번째 입력값:' + username + ', 두번째 입력값:' + message)
+      alert(`첫번째 입력값: ${username}, 두번째 입력값: ${message}`)
       setForm({ username: '', message: '' })
    }
 
@@ -38,7 +38,9 @@ const EventPractice2 = () => {
 
          <input type="text" name="message" placeholder="아무거나 입력" value={message} onChange={onChange} onKeyDown={onKeyDown} />
 
-         <button onClick={onClick}>확인</button>
+         <button onClick={onClick} disabled={!username || !message}>
+            확인
+         </button>
       </div>
    )
 }

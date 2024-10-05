@@ -1,5 +1,5 @@
 import EventPractice from './EventPractice'
-// import EventPractice2 from './EventPractice2'
+import EventPractice2 from './EventPractice2'
 
 function App() {
    return <EventPractice />
