@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const IterationSample5 = () => {
+function IterationSample5() {
    const [names, setNames] = useState([
       { id: 1, text: '눈사람' },
       { id: 2, text: '얼음' },
@@ -13,26 +13,26 @@ const IterationSample5 = () => {
 
    const onChange = (e) => setInputText(e.target.value)
 
-   //concat() 2개 이상의 배열을 합치는 메소드
-
+   // 사용자가 input에 입력한 값을 names state에 추가하는 함수
    const onClick = () => {
+      // concat() : 두개 이상의 배열을 합치는 함수
       const nextNames = names.concat({
-         id: nextId, //nextId값을 id로 설정하고
-         text: inputText,
+         id: nextId, // 5
+         text: inputText, // input창에서 사용자가 입력한 값
       })
 
-      setNextId(nextId + 1) //nextId에 1을 더해준다
-      setNames(nextNames) //names 값을 업데이트 한다
-      setInputText('') //inputText를 비운다
+      setNames(nextNames) //names state를 합친 배열로 변경
+      setNextId(nextId + 1) // 다음에 데이터 추가시 nexdId를 1씩 증가시키기 위해
+      setInputText('') // 추가 버튼 클릭 후 input창에 작성한 글자가 빈문자열이 되도록 만든다
    }
 
-   const namesList = names.map((name) => <li key={name.id}>{name.text}</li>)
+   const nameList = names.map((name) => <li key={name.id}>{name.text}</li>)
 
    return (
       <>
-         <input value={inputText} onChange={onChange}></input>
+         <input value={inputText} onChange={onChange} />
          <button onClick={onClick}>추가</button>
-         <ul>{namesList}</ul>
+         <ul>{nameList}</ul>
       </>
    )
 }

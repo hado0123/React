@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const IterationSample4 = () => {
+function IterationSample4() {
    const [names, setNames] = useState([
       { id: 1, text: '눈사람' },
       { id: 2, text: '얼음' },
@@ -11,12 +11,13 @@ const IterationSample4 = () => {
    const [inputText, setInputText] = useState('')
 
    const onChange = (e) => setInputText(e.target.value)
-   const namesList = names.map((name) => <li key={name.id}>{name.text}</li>)
+
+   const nameList = names.map((name) => <li key={name.id}>{name.text}</li>)
 
    return (
       <>
-         <input value={inputText} onChange={onChange}></input>
-         <ul>{namesList}</ul>
+         <input value={inputText} onChange={onChange} />
+         <ul>{nameList}</ul>
       </>
    )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const IterationSample3 = () => {
+function IterationSample3() {
    const [names, setNames] = useState([
       { id: 1, text: '눈사람' },
       { id: 2, text: '얼음' },
@@ -9,6 +9,7 @@ const IterationSample3 = () => {
    ])
 
    const nameList = names.map((name) => <li key={name.id}>{name.text}</li>)
+
    return <ul>{nameList}</ul>
 }
 
