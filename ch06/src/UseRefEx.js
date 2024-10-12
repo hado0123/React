@@ -10,7 +10,8 @@ function UseRefEx() {
 
    return (
       <div>
-         {/* ref 속성에 inputRef를 할당하여 ref를 생성합니다. */}
+         {/* dom을 직접적으로 다루고 싶은 요소에 inputRef 적용 */}
+
          <input ref={inputRef} type="text" />
          <button onClick={handleClick}>Focus Input</button>
       </div>

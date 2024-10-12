@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const getAverage = (numbers) => {
    console.log('평균값 계산...')
+   // numbers = [1, 2, 3] 일때
 
    if (numbers.length === 0) return 0
    const sum = numbers.reduce((a, b) => a + b) //누적합계

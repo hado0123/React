@@ -22,6 +22,7 @@ const UseMemoEx2 = () => {
       setNumber('')
    }
 
+   // list state가 바뀔때만 getAverage() 함수 실행
    const avg = useMemo(() => getAverage(list), [list])
 
    return (
