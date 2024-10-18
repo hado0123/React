@@ -1,4 +1,6 @@
-function Counter() {
+import React, { useState } from 'react'
+
+function ReducerCounter1() {
    const [count, setCount] = useState(0)
 
    function down() {
@@ -23,4 +25,4 @@ function Counter() {
    )
 }
 
-export default Counter
+export default ReducerCounter1
