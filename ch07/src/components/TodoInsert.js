@@ -18,7 +18,7 @@ function TodoInsert({ onInsert }) {
          // 이를 방지하기 위하여 이 함수를 호출합니다.
          e.preventDefault()
       },
-      [onInsert, value]
+      [onInsert, value] // onInsert 자체도 useCallback으로 정의된 함수이며 todos state에 의존한다. 즉, todos가 변경될 때마다 onInsert 함수가 새로 만들어지므로 사용
    )
 
    return (
