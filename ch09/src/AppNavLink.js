@@ -43,10 +43,13 @@ function App() {
                <NavLink to="/contact">Contact</NavLink>
             </li>
          </ul>
+         {/* 주소의 경로에 따라서 어떤 컴포넌트를 보여줄지 지정 */}
          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/topics" element={<Topics />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* 지정한 경로외에 다른 모든 경로는 Not Found를 보여준다 */}
             <Route path="/*" element={'Not Found'} />
          </Routes>
       </div>

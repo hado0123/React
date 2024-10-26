@@ -30,12 +30,9 @@ function Topics() {
          <h2>Topics</h2>
          <ul>{lis}</ul>
          <Routes>
-            <Route path="/1" />
-            <Route path="/2" />
-            <Route path="/3" />
-            {/* <Route path="/1" element={'HTML is ...'} />
+            <Route path="/1" element={'HTML is ...'} />
             <Route path="/2" element={'JS is ...'} />
-            <Route path="/3" element={'React is ...'} /> */}
+            <Route path="/3" element={'React is ...'} />
          </Routes>
       </div>
    )
