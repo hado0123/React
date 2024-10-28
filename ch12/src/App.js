@@ -1,7 +1,9 @@
-import Counter from './NonTooklit/Counter'
 import { Provider } from 'react-redux'
+// import Counter from './NonTooklit/Counter'
 // import storeNonToolkit from './NonTooklit/store'
+import Counter from './UseToolkit/Counter'
 import storeUseToolkit from './UseToolkit/store'
+import User from './UseToolkit/User'
 
 function App() {
    // return (
@@ -16,6 +18,7 @@ function App() {
       <Provider store={storeUseToolkit}>
          <div>
             <Counter />
+            <User />
          </div>
       </Provider>
    )
