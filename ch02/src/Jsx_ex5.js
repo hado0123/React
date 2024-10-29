@@ -12,7 +12,7 @@ function App() {
    }
 
    return <div style={style}>{name}</div>
-   
+
    /* 
    혹은 
    return <div style={{
