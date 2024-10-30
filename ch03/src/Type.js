@@ -1,5 +1,6 @@
 const Type = (props) => {
    const { str, num, bool, arr, json, func } = props
+   const result = func(1, 2)
    return (
       <div>
          <p>StringProps: {str}</p>
@@ -7,7 +8,8 @@ const Type = (props) => {
          <p>BooleanProps: {bool.toString()}</p>
          <p>ArrayProps: {arr.toString()}</p>
          <p>JSONProps: {JSON.stringify(json)}</p>
-         <p>FunctionProps: {func}</p>
+         <p>FunctionProps: {result}</p>
+         {/* <p>FunctionProps: {func(1, 2)}</p> */}
       </div>
    )
 }

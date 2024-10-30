@@ -7,7 +7,7 @@ const Say = () => {
 
    /* 
        1. useState 선언
-        const [ state값, state값을 바꿀함수 ] = useState(초기값)
+        const [ state값을 저장할 변수, state값을 바꿀함수 ] = useState(초기 state 값)
        2. useState 사용
         state값을 바꿀함수(업데이트 값) 
     */
@@ -21,17 +21,26 @@ const Say = () => {
          <button
             onClick={() => {
                setColor('red')
-            }}>빨간</button>
-         
+            }}
+         >
+            빨간
+         </button>
+
          <button
             onClick={() => {
                setColor('green')
-            }}>초록</button>
-         
+            }}
+         >
+            초록
+         </button>
+
          <button
             onClick={() => {
                setColor('blue')
-            }}>파란</button>
+            }}
+         >
+            파란
+         </button>
       </div>
    )
 }
