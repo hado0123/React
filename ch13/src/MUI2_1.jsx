@@ -1,4 +1,4 @@
-// 커스터마이징 한 CSS 적용방법 1
+// 커스터마이징 한 CSS 적용방법 1: 전통적인 CSS 적용
 
 import './App.css'
 import Button from '@mui/material/Button'
