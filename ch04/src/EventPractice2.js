@@ -1,30 +1,41 @@
 import React, { useState } from 'react'
 
-const EventPractice2 = () => {
-   //form의 초기값은 json객체 저장(username, message가 빈문자열)
+function EventPractice2() {
+   //input창이 여러개 일때 대처하는 방법
    const [form, setForm] = useState({
       username: '',
       message: '',
    })
 
+   /*
+    form = {
+      username: '',
+      message: '',
+   }
+   */
+
    const { username, message } = form
 
    const onChange = (e) => {
+      // form state안에 있는 값들을 바꿔줘야 한다
       const nextForm = {
-         ...form, //기존의 form 내용을 복사한 뒤
-         [e.target.name]: e.target.value, //원하는 값을 덮어씌운다
+         ...form,
+         [e.target.name]: e.target.value,
       }
 
-      setForm(nextForm) //덮어씌운 값으로 상태변화시킴
+      setForm(nextForm)
    }
 
    const onClick = () => {
-      //클릭시 username, message값 출력후 username, message값 비워줌
+      // 사용자가 input창에 입력한 state값을 출력
       alert(`첫번째 입력값: ${username}, 두번째 입력값: ${message}`)
+
+      //form state값의 초기화
       setForm({ username: '', message: '' })
    }
 
    const onKeyDown = (e) => {
+      // 엔터를 눌렀을때 onClick() 실행
       if (e.key === 'Enter') {
          onClick()
       }
@@ -38,6 +49,7 @@ const EventPractice2 = () => {
 
          <input type="text" name="message" placeholder="아무거나 입력" value={message} onChange={onChange} onKeyDown={onKeyDown} />
 
+         {/* disabled를 이용해서 첫번째 input창과 두번째 input창 둘다 입력이 되었을때만 버튼 활성화 */}
          <button onClick={onClick} disabled={!username || !message}>
             확인
          </button>

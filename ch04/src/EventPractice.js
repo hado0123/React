@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 
-const EventPractice = () => {
+function EventPractice() {
    const [username, setUsername] = useState('')
    const [message, setMessage] = useState('')
 
-   // username의 state 값을 바꾼다
+   //input창에 입력한 값을 state값으로 적용
    const onChangeUsername = (e) => setUsername(e.target.value)
-
-   // message의 state 값을 바꾼다
    const onChangeMessage = (e) => setMessage(e.target.value)
 
-   const onClick = (e) => {
+   const onClick = () => {
+      // 사용자가 input창에 입력한 state값을 출력
       alert(`첫번째 입력값: ${username}, 두번째 입력값: ${message}`)
+
+      //state값을 초기화(input 창의 value도 사라짐)
       setUsername('')
       setMessage('')
    }
 
    const onKeyDown = (e) => {
+      // 엔터를 눌렀을때 onClick() 실행
       if (e.key === 'Enter') {
          onClick()
       }
@@ -30,8 +32,7 @@ const EventPractice = () => {
 
          <input type="text" name="message" placeholder="아무거나 입력" value={message} onChange={onChangeMessage} onKeyDown={onKeyDown} />
 
-         {/* 속성에 사용하는 and, or 연산자는 조건부 연산자 X */}
-         {/* disable은 true flase로 값을 준다. 이는 jsx 의 조건부 렌더링과는 다르다 jsx의 조건부 렌더링은 특정 값에 따라 다른 값, 다른 컴포넌트를 그리고 싶을때 사용한다 */}
+         {/* disabled를 이용해서 첫번째 input창과 두번째 input창 둘다 입력이 되었을때만 버튼 활성화 */}
          <button onClick={onClick} disabled={!username || !message}>
             확인
          </button>

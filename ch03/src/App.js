@@ -29,6 +29,7 @@ function App() {
    //       func={(a, b) => {
    //          return a + b
    //       }}
+   //       func={func}
    //    />
    // )
 }
