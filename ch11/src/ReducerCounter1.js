@@ -3,17 +3,9 @@ import React, { useState } from 'react'
 function ReducerCounter1() {
    const [count, setCount] = useState(0)
 
-   function down() {
-      setCount(count - 1)
-   }
-
-   function reset() {
-      setCount(0)
-   }
-
-   function up() {
-      setCount(count + 1)
-   }
+   const down = () => setCount(count - 1)
+   const reset = () => setCount(0)
+   const up = () => setCount(count + 1)
 
    return (
       <>

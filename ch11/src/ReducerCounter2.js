@@ -1,11 +1,14 @@
 import React, { useReducer } from 'react'
 
 function ReducerCounter2() {
-   const [count, countDispatch] = useReducer(countReducer, 0)
+   // [state 값, dispath로 사용할 함수의 이름] = (reducer로 사용할 함수 이름, state 초기값)
+   const [count, countDispath] = useReducer(countReducer, 0)
 
+   // reducer 함수: 직접 state를 변경한다(회계직원 역할)
    function countReducer(oldCount, action) {
+      // (현재 state, dispath에서 전달받은 action)
       if (action === 'UP') {
-         return oldCount + 1
+         return oldCount + 1 // return 실행시 state가 업데이트
       } else if (action === 'DOWN') {
          return oldCount - 1
       } else if (action === 'RESET') {
@@ -13,17 +16,10 @@ function ReducerCounter2() {
       }
    }
 
-   function down() {
-      countDispatch('DOWN')
-   }
-
-   function reset() {
-      countDispatch('RESET')
-   }
-
-   function up() {
-      countDispatch('UP')
-   }
+   // dispath 함수: 이벤트가 발생시 reducer 함수를 실행시키면서 action을 전달(창구 직원 역할)
+   const down = () => countDispath('DOWN')
+   const reset = () => countDispath('RESET')
+   const up = () => countDispath('UP')
 
    return (
       <>

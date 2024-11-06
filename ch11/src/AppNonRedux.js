@@ -1,8 +1,5 @@
-import ReducerCounter1 from './ReducerCounter1'
-import ReducerCounter2 from './ReducerCounter2'
-import ReducerCounter3 from './ReducerCounter3'
-import './App.css'
 import React, { useState } from 'react'
+import './App.css'
 
 function Left1(props) {
    return (
@@ -34,7 +31,7 @@ function Right1(props) {
    return (
       <div>
          <h1>Right1</h1>
-         <Right2 onIncrease={props.onIncrease}></Right2>
+         <Right2 onIncrease={props.onIncrease} />
       </div>
    )
 }
@@ -43,7 +40,7 @@ function Right2(props) {
    return (
       <div>
          <h1>Right2</h1>
-         <Right3 onIncrease={props.onIncrease}></Right3>
+         <Right3 onIncrease={props.onIncrease} />
       </div>
    )
 }
@@ -58,22 +55,18 @@ function Right3(props) {
 }
 
 function App() {
-   // 리듀서
-   // return <ReducerCounter1 />
-   // return <ReducerCounter2 />
-   // return <ReducerCounter3 />
+   const [number, setNumber] = useState(1)
 
-   const [number, serNumber] = useState(1)
    return (
       <div className="container">
-         <h1>Root:{number}</h1>
+         <h1>Root: {number}</h1>
          <div className="grid">
-            <Left1 number={number}></Left1>
+            <Left1 number={number} />
             <Right1
                onIncrease={() => {
-                  serNumber(number + 1)
+                  setNumber(number + 1)
                }}
-            ></Right1>
+            />
          </div>
       </div>
    )
