@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const counterSlice = createSlice({
-   name: 'counterSlice',
-   initialState: { value: 0 },
+   name: 'counterSlice', //slice의 이름
+   initialState: { value: 0 }, //state의 초기값
    reducers: {
+      //reducer
       up: (state, action) => {
          state.value += action.payload
       },
@@ -13,5 +14,6 @@ const counterSlice = createSlice({
    },
 })
 
-export default counterSlice
-export const { up, down } = counterSlice.actions
+export default counterSlice.reducer //리듀서를 내보냄
+
+export const { up, down } = counterSlice.actions //reducers 안에 정의한 up, down 함수를 내보냄

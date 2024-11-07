@@ -3,7 +3,10 @@ import { setName, setAge } from './userSlice'
 
 function User() {
    const dispatch = useDispatch()
-   const { name, age } = useSelector((state) => state.user) // user 상태 사용
+   //name = '', age = 0
+   const { name, age } = useSelector((state) => {
+      return state.user // { name: '', age: 0 }
+   })
 
    return (
       <div>
