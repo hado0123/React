@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react'
 import './App.css'
 
-const themeDefault = { border: '10px solid red' }
+const themeDefault = { border: '10px solid green' }
 const themeContext = createContext(themeDefault)
 
 function App() {
@@ -9,24 +9,20 @@ function App() {
    console.log(theme)
 
    return (
-      <themeContext.Provider value={{ border: '10px solid blue' }}>
-         <div className="root" style={theme}>
-            <h1>Hello world!</h1>
-            <Sub1 />
-         </div>
-      </themeContext.Provider>
+      <div className="root" style={theme}>
+         <h1>Hello world!</h1>
+         <Sub1 />
+      </div>
    )
 }
 
 function Sub1() {
    const theme = useContext(themeContext)
    return (
-      <themeContext.Provider value={{ border: '10px solid green' }}>
-         <div style={theme}>
-            <h1>Sub1</h1>
-            <Sub2 />
-         </div>
-      </themeContext.Provider>
+      <div style={theme}>
+         <h1>Sub1</h1>
+         <Sub2 />
+      </div>
    )
 }
 
