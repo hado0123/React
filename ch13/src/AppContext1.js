@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react'
 import './App.css'
 
 const themeDefault = { border: '10px solid green' }
-const themeContext = createContext(themeDefault)
+const themeContext = createContext(themeDefault) // 데이터를 공유하기 위한 context 생성
 
 function App() {
    const theme = useContext(themeContext)
