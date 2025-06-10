@@ -9,9 +9,9 @@ function App() {
    return (
       <Routes>
          <Route path="/" element={<Home />} />
-         <Route path="/popular" element={<MovieCategory category="popular" />} />
-         <Route path="/now_playing" element={<MovieCategory category="now_playing" />} />
-         <Route path="/upcoming" element={<MovieCategory category="upcoming" />} />
+         <Route path="/popular" element={<MovieCategory key="popular" category="popular" />} />
+         <Route path="/now_playing" element={<MovieCategory key="now_playing" category="now_playing" />} />
+         <Route path="/upcoming" element={<MovieCategory key="upcoming" category="upcoming" />} />
          <Route path="/search" element={<SearchResults />} />
          <Route path="/detail/:movieId" element={<Detail />} />
          <Route path="/*" element={<NotFound />} />
