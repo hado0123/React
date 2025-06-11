@@ -1,5 +1,5 @@
 // 인기영화, 현재 상영중 영화, 개봉예정 영화
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMovies } from '../features/movies/moviesSlice'
 
@@ -18,10 +18,6 @@ function MovieCategory({ category }) {
       now_playing: 1,
       upcoming: 1,
    })
-   /*
-      최초로 메뉴 클릭시 MovieCategory 컴포넌트 렌더링(마운트)
-      이후 메뉴 클릭시 MovieCategory 컴포넌트 재렌더링 X (라우터를 사용한 경우 같은 컴포넌트 사용시 props가 바뀌어도 재렌더링 X)
-   */
 
    // page가 바뀔때 또는 category가 바뀔때(메뉴 눌렀을때)마다 실행
    useEffect(() => {
@@ -29,12 +25,12 @@ function MovieCategory({ category }) {
    }, [dispath, page, category])
 
    // 페이지 번호 1씩 증가
-   const loadMore = useCallback(() => {
+   const loadMore = () => {
       setPage((prevPage) => ({
          ...prevPage,
          [category]: prevPage[category] + 1, // prevPage.category + 1
       }))
-   }, [category])
+   }
 
    if (loading && page === 1) {
       return (
