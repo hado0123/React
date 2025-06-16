@@ -31,10 +31,4 @@ export const getMovieDetails = async (movieId) => {
    return response
 }
 
-// 장르 목록 가져오기
-export const getGenres = async () => {
-   const response = await tmdbApi.get('/genre/movie/list')
-   return response
-}
-
 export default tmdbApi
