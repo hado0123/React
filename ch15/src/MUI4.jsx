@@ -1,5 +1,6 @@
 //grid를 이용한 반응형 레이아웃
 
+// https://mui.com/material-ui/react-container/
 // https://mui.com/material-ui/react-grid/
 // https://mui.com/material-ui/customization/breakpoints/
 /*
@@ -24,6 +25,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }))
 
 function MUI4() {
+   // container: 이 <Grid>는 다른 Grid 아이템들을 포함하는 "부모 그리드" 역할
    return (
       <Container maxWidth="md">
          <Grid container spacing={2}>
