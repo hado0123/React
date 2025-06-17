@@ -1,8 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getMovies, getMovieDetails } from '../api/tmdbApi'
 
-// 비동기 Thunk 액션: 영화 목록을 API로부터 가져옴
-//'movies/fetchMovies' 액션의 타입명, 액션을 구분할 때 사용
+// createAsyncThunk: 비동기 thunk 액션 -> 영화 목록을 API로 부터 가져옴
+// createAsyncThunk(type명, 비동기 함수)
+// 비동기 함수에서 API를 call하는 함수 실행
+// type명은 'slice의 이름/변수명'으로 짓는다
+
+// 인기 영화 목록 가져오기
 export const fetchMovies = createAsyncThunk('movies/fetchMovies', async () => {
    const response = await getMovies()
    return response.data.results
@@ -30,6 +34,7 @@ const moviesSlice = createSlice({
          //데이터를 가져오는 동안
          .addCase(fetchMovies.pending, (state) => {
             state.loading = true
+            state.error = null
          })
          // 데이터를 성공적으로 가져오는 경우
          .addCase(fetchMovies.fulfilled, (state, action) => {
