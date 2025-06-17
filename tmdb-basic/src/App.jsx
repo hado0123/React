@@ -1,5 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
+
 // import MovieList from './components/NonRedux/MovieList'
+// import MovieUpcoming from './components/NonRedux/MovieUpcoming'
+
 import MovieList from './components/UseRedux/MovieList'
 import MovieDetail from './components/UseRedux/MovieDetail'
 import NotFound from './components/UseRedux/NotFound'

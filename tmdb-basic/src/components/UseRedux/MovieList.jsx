@@ -19,8 +19,8 @@ const MoviesList = () => {
          <h1>Popular Movies</h1>
          <ul>
             {movies.map((movie) => (
-               <Link to={`/detail/${movie.id}`}>
-                  <li key={movie.id}>{movie.title}</li>
+               <Link key={movie.id} to={`/detail/${movie.id}`}>
+                  <li>{movie.title}</li>
                </Link>
             ))}
          </ul>
