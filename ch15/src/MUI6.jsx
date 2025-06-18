@@ -3,14 +3,20 @@
 // https://mui.com/material-ui/material-icons/
 // https://mui.com/material-ui/api/icon-button/
 
-import { IconButton } from '@mui/material'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import IconButton from '@mui/material/IconButton'
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
+import AddToQueueIcon from '@mui/icons-material/AddToQueue'
 
 function MUI6() {
    return (
-      <IconButton color="primary" aria-label="delete">
-         <AccountCircleIcon />
-      </IconButton>
+      <>
+         <AccessTimeFilledIcon />
+         <AddToQueueIcon />
+         <br />
+         <IconButton color="secondary" aria-label="시계">
+            <AccessTimeFilledIcon />
+         </IconButton>
+      </>
    )
 }
 

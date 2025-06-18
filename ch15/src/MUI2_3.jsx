@@ -7,6 +7,8 @@
 import { Box } from '@mui/material'
 
 function MUI2_3() {
+   // sx props도 인라인 스타일 적용방법과 유사하게 사용
+   // => json 객체, 속성명은 카멜표기법 사용
    return (
       <Box
          sx={{

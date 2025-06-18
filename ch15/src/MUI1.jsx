@@ -5,11 +5,23 @@ import Button from '@mui/material/Button'
 
 function MUI1() {
    return (
-      <div>
-         <Button variant="text">Text</Button>
-         <Button variant="contained">Contained</Button>
-         <Button variant="outlined">Outlined</Button>
-      </div>
+      <>
+         <Button
+            variant="text"
+            size="large"
+            onClick={() => {
+               alert('버튼 클릭')
+            }}
+         >
+            Text
+         </Button>
+         <Button variant="contained" disabled size="medium">
+            Contained
+         </Button>
+         <Button variant="outlined" size="small">
+            Outlined
+         </Button>
+      </>
    )
 }
 
