@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography'
 
 function MovieCard({ movies }) {
    return (
+      //  spacing: 1 = 8px
+      // 20px 간격
       <Grid container spacing={2.5}>
          {movies.map((movie) => (
             //  size = 12/5 하나의 행에 5개의 grid 보여줌

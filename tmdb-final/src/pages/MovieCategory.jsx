@@ -13,18 +13,19 @@ function MovieCategory({ category }) {
    const dispath = useDispatch()
    const { movies, loading, error } = useSelector((state) => state.movies)
 
+   // 카테고리 별 페이지번호
    const [page, setPage] = useState({
       popular: 1,
       now_playing: 1,
       upcoming: 1,
    })
 
-   // page가 바뀔때 또는 category가 바뀔때(메뉴 눌렀을때)마다 실행
+   // category가 바뀔때(메뉴 누를때) 또는 page가 바뀔때(더 보기 버튼 누를때) 동작
    useEffect(() => {
       dispath(fetchMovies({ category, page: page[category] }))
    }, [dispath, page, category])
 
-   // 페이지 번호 1씩 증가
+   // 더보기 버튼 클릭시 페이지 번호 1씩 증가
    const loadMore = () => {
       setPage((prevPage) => ({
          ...prevPage,
@@ -32,7 +33,8 @@ function MovieCategory({ category }) {
       }))
    }
 
-   if (loading && page === 1) {
+   // 페이지 번호가 1번일때만 loading 실행함 -> 더보기 클릭시 로딩 컴포넌트가 렌더링되면서 위로 올라오는 현상 위로 올라오는 현상 방지
+   if (loading && page[category] === 1) {
       return (
          <Wrap>
             <Menu />

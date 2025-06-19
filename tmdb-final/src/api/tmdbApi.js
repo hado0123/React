@@ -48,7 +48,7 @@ export const getMovieCredits = async (movieId) => {
    return response
 }
 
-// API를 통해 영화목록을 가져오는 함수
+// 인기영화, 개봉예정영화, 상영중영화
 export const getMovies = async (category = 'popular', page = 1) => {
    const response = await tmdbApi.get(`/movie/${category}`, {
       params: {
