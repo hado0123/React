@@ -29,14 +29,14 @@ function CreditsSlider() {
       <MarginDiv>
          <h2>출연배우</h2>
          <Swiper
-            slidesPerView={5}
-            spaceBetween={30}
+            slidesPerView={5} // 한페이지당 몇개의 slider를 보여줄지
+            spaceBetween={30} // slider간 간격: 30px
             scrollbar={{
                hide: false,
             }}
             autoplay={{
-               delay: 3000,
-               disableOnInteraction: false,
+               delay: 3000, // 3초 뒤 이동
+               disableOnInteraction: false, // 사용자가 슬라이드를 직접 조작(터치, 드래그, 클릭 등)했을 때 autoplay를 멈출지 말지를 결정하는 설정
             }}
             modules={[Scrollbar, Autoplay]}
             className="mySwiper"
