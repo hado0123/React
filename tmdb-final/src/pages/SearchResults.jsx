@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchSearchResults } from '../features/movies/moviesSlice'
+import { fetchSearchResults } from '../features/moviesSlice'
 
 import { Wrap, Main, Loading } from '../styles/StyledComponent'
 import Menu from '../components/Menu'

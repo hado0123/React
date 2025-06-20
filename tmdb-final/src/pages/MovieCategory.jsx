@@ -1,7 +1,7 @@
 // 인기영화, 현재 상영중 영화, 개봉예정 영화
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovies } from '../features/movies/moviesSlice'
+import { fetchMovies } from '../features/moviesSlice'
 
 import { Wrap, Main, Loading } from '../styles/StyledComponent'
 import Menu from '../components/Menu'

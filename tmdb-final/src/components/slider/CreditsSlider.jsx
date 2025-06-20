@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovieCredits } from '../../features/movies/moviesSlice'
+import { fetchMovieCredits } from '../../features/moviesSlice'
 import { useParams } from 'react-router-dom'
 import { Loading, MarginDiv } from '../../styles/StyledComponent'
 

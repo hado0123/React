@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { searchMovie, getMovieDetails, getMovieCredits, getMovies } from '../../api/tmdbApi'
+import { searchMovie, getMovieDetails, getMovieCredits, getMovies } from '../api/tmdbApi'
 
 /*
 createAsyncThunk의 async 함수에서 매개변수로 2개 이상의 값을 받으려면 

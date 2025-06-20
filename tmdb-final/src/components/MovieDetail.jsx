@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovieDetails } from '../features/movies/moviesSlice'
+import { fetchMovieDetails } from '../features/moviesSlice'
 import { Loading, MarginDiv } from '../styles/StyledComponent'
 
 import Grid from '@mui/material/Grid'
