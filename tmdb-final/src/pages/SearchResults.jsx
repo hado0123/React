@@ -18,23 +18,13 @@ function SearchResults() {
    const dispath = useDispatch()
    const { searchResults, loading, error } = useSelector((state) => state.movies)
 
-   // 맨 처음에 검색할때 1페이지 데이터를 가져옴
    useEffect(() => {
-      dispath(fetchSearchResults({ query, page: 1 }))
-   }, [dispath, query])
+      dispath(fetchSearchResults({ query, page }))
+   }, [dispath, query, page])
 
-   // page가 변경될때 마다 새로운 결과를 로딩
-   // 더보기 버튼 클릭 -> page state가 변경 -> fetchSearchResults(..) 실행
-   useEffect(() => {
-      //2페이지 부터 실행 (useEffect는 사이트 들어왔을때 무조건 최초로 1번 실행하므로 위에 useEffect와 같이 실행되는 것 방지)
-      if (page > 1) {
-         dispath(fetchSearchResults({ query, page }))
-      }
-   }, [page, dispath, query])
-
+   // 더보기 누를때마다 page state 1씩 증가
    const loadMore = () => {
-      // 더보기 누를때마다 page state 가 1씩 증가
-      setPage((prevPage) => prevPage + 1)
+      setPage((prevState) => prevState + 1)
    }
 
    if (loading && page === 1) {

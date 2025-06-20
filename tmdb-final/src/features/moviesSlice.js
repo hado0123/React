@@ -32,13 +32,15 @@ export const fetchMovieCredits = createAsyncThunk('movies/fetchMovieCredits', as
 
 const moviesSlice = createSlice({
    name: 'movies',
+   // fetch함수에서 return해주는 값이 배열일때 초기 state는 빈배열
+   // fetch함수에서 return해주는 값이 객체일때 초기 state는 null
    initialState: {
-      loading: false,
-      error: null,
-      searchResults: [], // 검색한 영화 목록(tmdb서버에서 받아오는 값이 배열일때 초기 state를 빈배열로 준다)
-      movieDetails: null, // 영화 상세 정보(tmdb서버에서 받아오는 값이 json객체일때 초기 state를 null로 준다)
-      movieCredits: null, // 영화 배우, 스태프 정보
-      movies: [], // 현재상영, 개봉예정, 인기 영화 목록
+      movies: [], // 현재상영 or 개봉예정 or 인기영화 목록
+      movieDetails: null, // 영화 상세 정보
+      movieCredits: null, // 배우정보
+      searchResults: [], // 검색한 영화 목록
+      loading: false, // 로딩여부
+      error: null, // 에러메세지
    },
    reducers: {},
    extraReducers: (builder) => {
